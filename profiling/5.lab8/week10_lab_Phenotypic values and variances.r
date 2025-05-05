@@ -1,5 +1,5 @@
 library(ggplot2)
-geno <- read.table("data/geno.txt", header=FALSE)
+geno <- read.table("/Users/bopeng/Documents/GitHub/2025-agro932-lab/data/geno.txt", header=FALSE)
 dim(geno)
 head(geno)
 names(geno) <- c("chr", "pos", "ref", "alt", paste0("plant", 1:20))
@@ -31,7 +31,7 @@ names(f2) <- paste0(f$chr, "_", f$pos)
 #f2=data.frame(ID=paste0("F2_",1:200),f2)
 write.table(f2, "data/f2_geno.csv", sep=",", quote=FALSE)
 
-f2 <- read.csv("data/f2_geno.csv", header=TRUE)
+f2 <- read.csv("/Users/bopeng/Documents/GitHub/2025-agro932-lab/data/f2_geno.csv", header=TRUE)
 table(f2[,2])
 table(f2[,5])
 
@@ -61,7 +61,7 @@ chisq.test(rbind(c(A1A1, A1A2, A2A2), c(p^2, 2*p*q, q^2)))
 #TASSEL
 
 ####Phenotype data
-pheno <- read.csv("data/f2_pheno.csv")
+pheno <- read.csv("/Users/bopeng/Documents/GitHub/2025-agro932-lab/data/f2_pheno.csv")
 hist(pheno$height, main="Plant Height", xlab="Value (inch)", breaks=20)
 
 #Combine genotype and phenotype files
